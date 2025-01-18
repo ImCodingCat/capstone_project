@@ -1,3 +1,3 @@
 # Capstone project Data Science (Dicoding Bootcamp) - mdavap
 ## Database preparation for metabase
-![ERD](https://i.imgur.com/U55J3Bq.png)
+![ERD](https://i.imgur.com/hjfr0V8.png)
