@@ -111,7 +111,7 @@ with tab1:
                 splitted = value.split(';')
                 for key in splitted:
                     input_regression[key] = 1
-        print(input_regression)        
+                    
         input_regression = pd.DataFrame([input_regression])
 
         # Label encoding
