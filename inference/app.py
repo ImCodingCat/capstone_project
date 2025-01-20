@@ -30,6 +30,7 @@ class Model:
 
     def predict(self, input):
         model = [value for key, value in self.binary.items() if not 'encoder' in key][1]
+        print(model)
         return model.predict(input)[0]
     
     def encode(self, input):
@@ -70,6 +71,7 @@ with tab1:
 
     if selected_value:
         target_anime = base_dataset[base_dataset['title'] == selected_value].iloc[0]
+        
         # Classification
         input_classification = {}
         for column in classification.get_order():
@@ -92,5 +94,32 @@ with tab1:
         # Label encoding
         classification.encode(input_classification)
         result_classification = classification.predict(input_classification)
-        print(result_classification)
 
+        # Regression
+        input_regression = {}
+        for column in regression.get_order():
+            input_regression[column] = 0
+
+        for column in target_anime.keys():
+            value = target_anime[column]
+
+            if column in input_regression:
+                # Fill in
+                input_regression[column] = value
+            elif column == 'studios' or column == 'genres':
+                # One hot encoding studios or genres
+                splitted = value.split(';')
+                for key in splitted:
+                    input_regression[key] = 1
+        print(input_regression)        
+        input_regression = pd.DataFrame([input_regression])
+
+        # Label encoding
+        regression.encode(input_regression)
+        result_regression = regression.predict(input_regression)
+
+        st.markdown(f"""
+                    # Prediction Result
+                        - Success: {'Yes' if result_classification else 'No'}
+                        - Score: {result_regression}
+                    """)
