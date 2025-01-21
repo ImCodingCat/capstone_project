@@ -35,8 +35,10 @@ class Model:
                     self.binary[clean_file_name] = json.load(file)
 
     def predict(self, input):
-        model = [value for key, value in self.binary.items() if not 'encoder' in key][1]
-        return model.predict(input)[0]
+        for key, model in self.binary.items():
+            if not 'encoder' in key and not 'columns' in key:
+                return model.predict(input)[0]
+        return 0
     
     def encode(self, input):
         for key, encoder in self.binary.items():
