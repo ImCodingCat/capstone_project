@@ -4,6 +4,16 @@
 ```
 docker run -p 8501:8501 ghcr.io/imcodingcat/anime-prediction:latest
 ```
+## Install Environment
+```
+conda create -n capstone python=3.10
+conda activate capstone
+pip install -r requirements.txt
+```
+## Run Jupyter
+```
+jupyter .
+```
 
 ## Data Attribution Notice
 
