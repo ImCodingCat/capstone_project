@@ -1,9 +1,4 @@
 # Capstone project Data Science (Dicoding Bootcamp) - mdavap
-
-## Run Dashboard Model Prediction
-```
-docker run -p 8501:8501 ghcr.io/imcodingcat/anime-prediction:latest
-```
 ## Install Environment
 ```
 conda create -n capstone python=3.10
@@ -14,7 +9,14 @@ pip install -r requirements.txt
 ```
 jupyter .
 ```
-
+## Run Dashboard Model Prediction
+```
+streamlit run ./inference/app.py
+```
+## Run Dashboard Model Prediction with Docker
+```
+docker run -p 8501:8501 ghcr.io/imcodingcat/anime-prediction:latest
+```
 ## Data Attribution Notice
 
 The data utilized in this project was obtained through the Jikan API, which interfaces with MyAnimeList's database. All content, including anime titles, descriptions, and associated metadata, remains the intellectual property of MyAnimeList and their respective content creators.
