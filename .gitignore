@@ -1,4 +1,3 @@
-dataset
-model
+dataset/raw
 *.env
 *.ini
