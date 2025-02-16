@@ -1,4 +1,5 @@
 # Capstone project Data Science (Dicoding Bootcamp) - mdavap
+[Click This To Visit Metabase Dashboard](https://dashboard.getani.me/public/dashboard/468536d4-cc25-48e5-ba36-5b086c8caad5)
 ## Install Environment
 ```
 conda create -n capstone python=3.10
